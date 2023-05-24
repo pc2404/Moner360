@@ -1,10 +1,13 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 const Manage = () => {
   return (
-    <div>
-      Manage
-    </div>
+    <Layout>
+      <div>
+        Manage
+      </div>
+    </Layout>
   )
 }
 

@@ -1,15 +1,17 @@
 import { Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import {useNavigate} from "react-router-dom"
 
-const NavPageMenuItemWidget = ({page, activePage, setActivePage}) => {
+const NavPageMenuItemWidget = ({page, activePage, captureChange}) => {
 
   const navigate=useNavigate();
   const handleClick=()=>{
-    setActivePage(page);
+    captureChange(page);
     navigate(`/${page}`)
 
   }
+
+  console.log("active page", activePage);
   return (
     <Typography
       sx={!(activePage===page) ? {

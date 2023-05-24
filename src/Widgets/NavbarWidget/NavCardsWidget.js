@@ -4,18 +4,20 @@ import FlexBetween from '../../Utiles/FlexBetween'
 import {KeyboardArrowUp } from '@mui/icons-material'
 import NavCardItemWidget from './NavCardItemWidget'
 import creditCard from "../../Assets/—Pngtree—editable fake plastic credit card_5373877.png"
+import { data } from '../../Redux/Data'
+import { cardImage } from '../../Assets/Logos'
 
 
 const NavCardsWidget = ({isNonMobileScreens}) => {
     const [isCardMenuToggled, setIsCardMenuToggled]=useState(false);
     const [activeCard, setActiveCard]=useState("Candace-7200")
-    const cards =["Candace-7200", "Linda-7201","Stacy-7202"]
+    const cardsArray=data.Response.Cards;
 
     return (
         <Fragment>
-            <Paper sx={{ padding: "1px 10px 1px 20px", cursor: "pointer", bgcolor: "#F1F1F1" }} onClick={() => setIsCardMenuToggled(!isCardMenuToggled)} >
-                <FlexBetween gap={1}>
-                    <img src={creditCard} alt='card' width="50px" height="50px" />
+            <Paper sx={{ padding: "0px 7px 1px 15px", cursor: "pointer", bgcolor: "#F1F1F1" }} onClick={() => setIsCardMenuToggled(!isCardMenuToggled)} >
+                <FlexBetween gap={1} p={1}>
+                    <img src={cardImage} alt='card' width="50px" height="36px" />
                     <Typography variant='h6' fontSize="15px">Candace-7200</Typography>
                     <KeyboardArrowUp />
                 </FlexBetween>
@@ -39,8 +41,8 @@ const NavCardsWidget = ({isNonMobileScreens}) => {
                         <Box sx={{ padding: "10px", color: "gray" }}>
                             <Typography fontSize="small">Switch Card Context</Typography>
                         </Box>
-                        {cards.map((card) => (
-                            <NavCardItemWidget card={card} key={card} activeCard={activeCard} setActiveCard={setActiveCard}/>
+                        {cardsArray.map((card) => (
+                            <NavCardItemWidget card={card.NickName} key={card.NickName} activeCard={activeCard} setActiveCard={setActiveCard}/>
 
                         ))}
                     </Stack>

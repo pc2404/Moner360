@@ -12,16 +12,11 @@ import Login from '../Pages/Login';
 
 
 
-const Layout = () => {
+const Layout = ({children}) => {
     return (
         <Fragment>
             <Navbar1 />
-         
-                <Route path="/home" element={<Home />} />
-                <Route path="/manage" element={<Manage />} />
-                <Route path="/payperks" element={<Payperks />} />
-                <Route path="/activity" element={<Activity />} />
-      
+            {children}
             <Footer />
         </Fragment>
 

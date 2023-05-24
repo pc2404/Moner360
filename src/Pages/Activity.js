@@ -1,10 +1,13 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 const Activity = () => {
   return (
-    <div>
-      Activity
-    </div>
+    <Layout>
+      <div>
+        Activity
+      </div>
+    </Layout>
   )
 }
 

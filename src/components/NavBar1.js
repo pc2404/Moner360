@@ -22,6 +22,7 @@ import HamburgetMenuWidget from "../Widgets/NavbarWidget/HamburgetMenuWidget";
 import NavCardsWidget from "../Widgets/NavbarWidget/NavCardsWidget";
 import NavPageMenuWidget from "../Widgets/NavbarWidget/NavPageMenuWidget";
 import styled from "@emotion/styled";
+import { smioneLogo, smioneMiniLogo } from "../Assets/Logos";
 
 const MyIconButton = styled(IconButton)({
     color: "#fff", textDecoration: "none", position: "relative", cursor: "pointer", padding: "0px",
@@ -46,32 +47,34 @@ const MyIconButton = styled(IconButton)({
 })
 const Navbar1 = () => {
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
-    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+    const isNonMobileScreens = useMediaQuery("(min-width: 800px)");
     const pages = ["Home", "Activity", "Manage", "PayPerks", "Setting", "Logout"];
 
     return (
-        <FlexBetween padding="10px 20px" sx={{ bgcolor: "#222323", color: "#fff", position:"sticky", top:"0", left:"0" }}>
+        <FlexBetween padding="10px 20px" sx={{ bgcolor: "#222323", color: "#fff" }}>
             <FlexBetween gap={2}>
                 {isNonMobileScreens && (
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: "none", md: "flex" },
-                            fontWeight: 700,
-                            letterSpacing: ".3rem",
-                            color: "inherit",
-                            textDecoration: "none",
-                        }}
-                    >
-                        smiOne
-                    </Typography>
+                    // <Typography
+                    //     variant="h6"
+                    //     noWrap
+                    //     component="a"
+                    //     href="/"
+                    //     sx={{
+                    //         mr: 2,
+                    //         display: { xs: "none", md: "flex" },
+                    //         fontWeight: 700,
+                    //         letterSpacing: ".3rem",
+                    //         color: "inherit",
+                    //         textDecoration: "none",
+                    //     }}
+                    // >
+                    //     smiOne
+                    // </Typography>
+                    <img src={smioneLogo}  alt="smiOne" width="120px" height="36px" />
                 )}
 
-                {!isNonMobileScreens && <AcUnitOutlined />}
+                {!isNonMobileScreens && 
+                    <img src={smioneMiniLogo} alt="smi" width="50px" height="50px"/> }
 
                 <NavCardsWidget isNonMobileScreens={isNonMobileScreens} />
             </FlexBetween>
