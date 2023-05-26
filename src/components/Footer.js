@@ -3,9 +3,11 @@ import React from 'react'
 import googlePlay from "../Assets/google-play-icon-transparent-7.png"
 import Grid from '@mui/material/Unstable_Grid2'
 import { Apple, Google } from '@mui/icons-material'
+import { smioneLogo, smioneMiniLogo } from "../Assets/Logos";
+
 
 const Footer = () => {
-    const itemsArray=["Cardholder Agreement",
+    const itemsArray = ["Cardholder Agreement",
         "About Us",
         "Privacy Policy",
         "Terms of Use",
@@ -14,22 +16,10 @@ const Footer = () => {
     return (
         <Box sx={{ width: "100%", bgcolor: "#222323", color: "#fff" }}>
             <Grid container>
-                <Grid item md={4} xs={12} sx={{padding:"20px"}}>
+                <Grid item md={4} xs={12} py={4}>
 
-                    <Stack direction="column" gap={4} sx={{padding:"20px"}}>
-                        <Typography
-                            variant="h5"
-                            sx={{
-                                mr: 2,
-                                display: "flex",
-                                fontWeight: 700,
-                                letterSpacing: ".3rem",
-                                color: "inherit",
-                                textDecoration: "none",
-                            }}
-                        >
-                            smiOne
-                        </Typography>
+                    <Stack direction="column" gap={4} sx={{ padding: "20px" }}>
+                        <img src={smioneLogo} alt="smiOne" width="120px" height="36px" />
                         <Stack direction="row">
                             <Stack mr={1} justifyContent="space-around" alignItems="center" direction="row"
                                 sx={{
@@ -37,8 +27,8 @@ const Footer = () => {
                                     padding: "7px 15px",
                                     width: "110px",
                                     bgcolor: "#3C3C3C",
-                                    
-                                   
+
+
                                 }}
                             >
                                 <Apple />
@@ -47,7 +37,7 @@ const Footer = () => {
                                     <Typography variant='h6' fontSize="12px">the App Store</Typography>
                                 </Stack>
                             </Stack>
-                            <Stack  justifyContent="space-around" alignItems="center" direction="row"
+                            <Stack justifyContent="space-around" alignItems="center" direction="row"
                                 sx={{
                                     borderRadius: "30px",
                                     padding: "7px 15px",
@@ -67,20 +57,20 @@ const Footer = () => {
 
                     </Stack>
                 </Grid>
-                <Grid item md={4} xs={12} sx={{padding:"20px", borderLeft:"2px solid white"}}>
+                <Grid item md={4} xs={12} p={2} sx={{borderLeft: "2px solid white" }}>
                     <Stack direction="column" justifyContent="flex-start" gap={1} pt={3}>
-                       {itemsArray.map((item)=>(
-                          <Typography>{item}</Typography>
-                       ))}
+                        {itemsArray.map((item) => (
+                            <Typography>{item}</Typography>
+                        ))}
                     </Stack>
                 </Grid>
                 <Grid item md={4} xs={12}>
-                    <Stack direction="column" gap={2} p={4}>
+                    <Stack direction="column" gap={2} py={4} px={2}>
                         <Typography variant='body' >Download the mobile app today.
-                        Text APP to 42627.   Reply HELP for help, reply STOP to unsubscribe.
-                        Standard text messaging and/or data rates from your wireless service provider may apply.</Typography>
+                            Text APP to 42627.   Reply HELP for help, reply STOP to unsubscribe.
+                            Standard text messaging and/or data rates from your wireless service provider may apply.</Typography>
                         <Typography color="grey">Copyright 2022 smiONE Card Services, LLC
-                        All Rights Reserved</Typography>
+                            All Rights Reserved</Typography>
                     </Stack>
                 </Grid>
 

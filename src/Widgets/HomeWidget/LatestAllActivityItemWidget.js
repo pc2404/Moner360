@@ -45,7 +45,7 @@ const LatestAllActivityItemWidget = ({ item }) => {
 
       <Grid item xs={4}>
         <Typography fontSize="large"  sx={DebitedCardDisplayNumber ? {textAlign:"right", fontWeight:"bold"} : {textAlign:"right", fontWeight:"bold", color:"#00C188"} } >
-          {`${(DebitedCardDisplayNumber) ? "-" : "+"} $${Amount}`}
+          {`${(DebitedCardDisplayNumber) ? "-" : "+"} $${Amount.toFixed(2)}`}
         </Typography>
       </Grid>
     </Grid>
